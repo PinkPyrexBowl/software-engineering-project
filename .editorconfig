@@ -2,7 +2,7 @@ root = true
 
 [*.{c,h}]
 end_of_line = lf
-insert_final_newline = true
+insert_final_newline = false
 indent_style = space
 indent_size = 4
 charset = utf-8

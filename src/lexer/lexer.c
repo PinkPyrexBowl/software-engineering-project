@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <string.h>
 #include "lexer.h"
 #include "queue.h"
+#include <stdio.h>
+#include <string.h>
 
 TokenType get_token_type(char *token_str);
 
@@ -25,7 +25,8 @@ void lex_tokens(char *input, Token *tokens)
 
 TokenType get_token_type(char *token_str)
 {
-    if (strcmp(token_str, "PRINT") == 0) return PRINT;
+    if (strcmp(token_str, "PRINT") == 0)
+        return PRINT;
 
     return VARIABLE;
 }
