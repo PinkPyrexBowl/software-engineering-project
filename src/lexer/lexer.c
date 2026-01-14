@@ -16,7 +16,7 @@ void lex_tokens(char *input, Token *tokens)
     {
         for (int i = 0; chunk[i] != '\0'; i++)
         {
-            
+            printf("%c", chunk[i]);
         }
 
         chunk = strtok(NULL, delimiter);
@@ -26,6 +26,8 @@ void lex_tokens(char *input, Token *tokens)
 TokenType get_token_type(char *token_str)
 {
     if (strcmp(token_str, "PRINT") == 0) return PRINT;
+
+    return VARIABLE;
 }
 
 inline bool is_special_character(char c)

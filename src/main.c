@@ -1,8 +1,8 @@
 #include "lexer.h"
 #include <stdio.h>
 
-int main(char** argv, int argc)
+int main(int argc, char **argv)
 {
-    char input[20] = "test   test2 test 3\0";
+    char input[20] = "test   test2 test 3";
     lex_tokens(input, NULL);
 }

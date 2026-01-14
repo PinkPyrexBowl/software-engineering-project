@@ -1,9 +1,6 @@
 #ifndef _H_QUEUE
 #define _H_QUEUE
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <stdbool.h>
 
 #define MAX (50U)
@@ -11,9 +8,9 @@
 typedef struct CharQueue
 {
     char values[MAX];
-    int front = 0;
-    int rear = -1;
-    int item_count = 0;
+    int front;
+    int rear;
+    int item_count;
 } CharQueue;
 
 int peek(CharQueue q);

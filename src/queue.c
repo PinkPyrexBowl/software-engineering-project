@@ -17,27 +17,27 @@ bool is_full(CharQueue q)
 
 void insert(CharQueue q, char data)
 {
-    if(!is_full(q))
+    if (!is_full(q))
     {
-        if(q.rear == MAX - 1)
+        if (q.rear == MAX)
         {
-            q.rear = -1;            
-        }       
+            q.rear = 0;
+        }
 
-        q.values[++q.rear] = data;
+        q.values[q.rear++] = data;
         q.item_count++;
-   }
+    }
 }
 
 int remove_data(CharQueue q)
 {
     int data = q.values[q.front++];
-	
-    if(q.front == MAX)
+
+    if (q.front == MAX)
     {
         q.front = 0;
     }
-	
-   q.item_count--;
-   return data;  
+
+    q.item_count--;
+    return data;
 }
