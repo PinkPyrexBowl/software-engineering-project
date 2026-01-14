@@ -39,6 +39,17 @@ inline bool is_special_character(char c)
 {
     switch (c)
     {
+        case '(':
+        case ')':
+        case '`':
+        case '[':
+        case ']':
+        case '=':
+        case '>':
+        case '<':
+        case '!':
+        case '^':
+        case '/':
         case '+':
         case '-':
         case '*':
