@@ -4,6 +4,7 @@
 #include <string.h>
 
 TokenType get_token_type(char *token_str);
+bool is_special_character(char c);
 
 CharQueue q;
 
@@ -16,7 +17,10 @@ void lex_tokens(char *input, Token *tokens)
     {
         for (int i = 0; chunk[i] != '\0'; i++)
         {
-            printf("%c", chunk[i]);
+            if (!is_special_character(chunk[i]))
+            {
+                
+            }
         }
 
         chunk = strtok(NULL, delimiter);
@@ -37,6 +41,13 @@ inline bool is_special_character(char c)
     {
         case '+':
         case '-':
+        case '*':
+        case '/':
+        case '(':
+        case ')':
+        case '[':
+        case ']':
+        case ',':
             return true;
         default:
             return false;

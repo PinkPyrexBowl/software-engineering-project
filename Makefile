@@ -4,6 +4,9 @@
 #
 # =============================================================================
 
+CC := gcc
+CXX := g++
+
 EXECUTABLE := tinybasic
 BUILD_DIR := build
 TARGET := debug

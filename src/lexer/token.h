@@ -12,6 +12,7 @@ typedef enum TokenType
     INT,
     LONG,
     FLOAT,
+
     // Instructions
     PRINT,
     GOTO,
@@ -25,6 +26,7 @@ typedef enum TokenType
     PEAK,
     LEN,
     // Control
+
     IF,
     ELSEIF,
     ELSE,
@@ -37,6 +39,7 @@ typedef enum TokenType
     FOR,
     NEXT,
     // Operators
+
     OPEN_PARENTHESIS,
     CLOSE_PARENTHESIS,
     OPEN_BRACKET,
@@ -55,6 +58,7 @@ typedef enum TokenType
     OR,
     MOD,
     // Values
+
     VARIABLE,
     LITERAL
 } TokenType;

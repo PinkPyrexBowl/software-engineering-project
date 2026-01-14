@@ -1,43 +1,48 @@
 #include "queue.h"
 
-int peek(CharQueue q)
+int peek(CharQueue *q)
 {
-    return q.values[q.front];
+    return q->values[q->front];
 }
 
-bool is_empty(CharQueue q)
+bool is_empty(CharQueue *q)
 {
-    return q.item_count == 0;
+    return false;
 }
 
-bool is_full(CharQueue q)
+bool is_full(CharQueue *q)
 {
-    return q.item_count == MAX;
+    return false;
 }
 
-void insert(CharQueue q, char data)
+void enqueue(CharQueue *q, char data)
 {
-    if (!is_full(q))
+    if (is_full(q))
     {
-        if (q.rear == MAX)
-        {
-            q.rear = 0;
-        }
-
-        q.values[q.rear++] = data;
-        q.item_count++;
-    }
-}
-
-int remove_data(CharQueue q)
-{
-    int data = q.values[q.front++];
-
-    if (q.front == MAX)
-    {
-        q.front = 0;
+        return;
     }
 
-    q.item_count--;
+    if (q->rear == MAX_TOKEN_LEN)
+    {
+        q->rear = 0;
+    }
+
+    q->values[q->rear++] = data;
+}
+
+int dequeue(CharQueue* q)
+{
+    if (is_empty(q))
+    {
+        return 0;
+    }
+
+    char data = q->values[q->front++];
+
+    if (q->front == MAX_TOKEN_LEN)
+    {
+        q->front = 0;
+    }
+
     return data;
 }

@@ -2,25 +2,23 @@
 #define _H_QUEUE
 
 #include <stdbool.h>
-
-#define MAX (50U)
+#include "token.h"
 
 typedef struct CharQueue
 {
-    char values[MAX];
+    char values[MAX_TOKEN_LEN];
     int front;
     int rear;
-    int item_count;
 } CharQueue;
 
-int peek(CharQueue q);
+int peek(CharQueue *q);
 
-bool is_empty(CharQueue q);
+bool is_empty(CharQueue *q);
 
-bool is_full(CharQueue q);
+bool is_full(CharQueue *q);
 
-void insert(CharQueue q, char data);
+void enqueue(CharQueue *q, char data);
 
-int remove_data(CharQueue q);
+int dequeue(CharQueue *q);
 
 #endif
